@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Churchill Power — Energy Storage Systems (BESS)</title>
+  <meta name="description" content="Churchill Power: modular battery energy storage systems (BESS) for commercial & industrial applications across Canada.">
+  <meta property="og:title" content="Churchill Power — Energy Storage Systems (BESS)">
+  <meta property="og:description" content="Modular BESS solutions for commercial & industrial applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://churchillpower.ca/">
+  <link rel="icon" href="/assets/favicon.svg">
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#">
+        <img src="/assets/logo.svg" alt="Churchill Power logo" class="logo">
+        <span>Churchill Power</span>
+      </a>
+      <nav class="nav">
+        <a href="#solutions">Solutions</a>
+        <a href="#why">Why us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Battery Energy Storage Systems for Canadian industry</h1>
+          <p class="lead">Modular BESS for peak shaving, backup power, and renewable integration. Scalable from 100 kWh to multi‑MWh.</p>
+          <div class="cta">
+            <a class="button" href="#contact">Request a call</a>
+            <a class="button ghost" href="#solutions">Explore solutions</a>
+          </div>
+          <ul class="badges">
+            <li>⚡ Grid services</li>
+            <li>🧊 CSA-focused design</li>
+            <li>🧩 Modular & scalable</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <img src="/assets/hero-bess.svg" alt="Illustration of modular BESS containers">
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions" class="section">
+      <div class="container">
+        <h2>Solutions</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Commercial &amp; Industrial BESS</h3>
+            <p>Peak shaving, demand charge reduction, power quality improvement. From 100–1000 kWh single-site systems.</p>
+          </article>
+          <article class="card">
+            <h3>Microgrid &amp; Renewables</h3>
+            <p>PV + Storage integration, diesel offset, islanded operation with smart controls and EMS.</p>
+          </article>
+          <article class="card">
+            <h3>Backup &amp; Resilience</h3>
+            <p>Seamless backup for critical loads with fast transfer and safe LFP chemistry.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section alt">
+      <div class="container">
+        <h2>Why Churchill Power</h2>
+        <ul class="features">
+          <li><strong>Safety-first:</strong> LFP chemistry, multi-layer BMS, fire detection & suppression readiness.</li>
+          <li><strong>Transparent integration:</strong> Open protocols (Modbus/TCP), SCADA/EMS friendly.</li>
+          <li><strong>Service model:</strong> Local install partners, remote monitoring, and SLAs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Tell us about your project. We’ll get back within one business day.</p>
+        <div class="contact-grid">
+          <form class="contact" method="POST" action="https://formspree.io/f/your_form_id">
+            <label>
+              Your name
+              <input type="text" name="name" placeholder="Full name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Project context, timeline, power/energy needs…" required></textarea>
+            </label>
+            <button class="button" type="submit">Send</button>
+            <p class="form-note">No tracking, no spam. Or email us at <a href="mailto:info@churchillpower.ca">info@churchillpower.ca</a>.</p>
+          </form>
+          <div class="company">
+            <h3>Churchill Power</h3>
+            <ul>
+              <li>Mississauga, ON, Canada</li>
+              <li><a href="mailto:info@churchillpower.ca">info@churchillpower.ca</a></li>
+            </ul>
+            <p class="small">© <span id="year"></span> Churchill Power. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="small">Built with a simple static stack. Fast, secure, and easy to host anywhere.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Minimal, responsive styles (no frameworks) */
+:root{
+  --bg:#0b0c10;
+  --panel:#11131a;
+  --ink:#0f172a;
+  --text:#111827;
+  --muted:#6b7280;
+  --brand:#2563eb;
+  --brand-ink:#1e3a8a;
+  --paper:#ffffff;
+  --soft:#f5f7fb;
+  --radius:16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji';
+  line-height:1.6;
+  color:#0f172a;
+  background: #fff;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.site-header{
+  position:sticky;top:0;background:#fff;border-bottom:1px solid #eef2f7;z-index:10
+}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:700;text-decoration:none;color:#111827}
+.logo{height:28px;width:auto}
+.nav a{margin-left:16px;text-decoration:none;color:#374151}
+.nav a:hover{color:#111827}
+.hero{padding:56px 0;background:linear-gradient(180deg,#f9fbff, #fff)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.hero h1{font-size: clamp(28px, 4vw, 44px);line-height:1.15;margin:0 0 10px}
+.lead{font-size: clamp(16px, 2.2vw, 18px);color:#4b5563;margin:0 0 18px}
+.cta{display:flex;gap:12px;margin-bottom:12px}
+.button{
+  background:var(--brand);color:#fff;text-decoration:none;border:none;border-radius:12px;
+  padding:12px 18px;font-weight:600;display:inline-block;box-shadow:var(--shadow);cursor:pointer
+}
+.button.ghost{background:#eaf1ff;color:#1d4ed8}
+.badges{display:flex;gap:12px;list-style:none;padding:0;margin:10px 0 0;color:#4b5563;font-size:14px;flex-wrap:wrap}
+.hero-art img{width:100%;height:auto;display:block;filter: drop-shadow(var(--shadow))}
+.section{padding:56px 0}
+.section.alt{background:#fafbff}
+h2{font-size: clamp(22px, 3.2vw, 30px);margin:0 0 18px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #eef2f7;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.features{display:grid;gap:8px;padding-left:20px}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.contact label{display:block;font-weight:600;margin-bottom:8px}
+.contact input,.contact textarea{
+  width:100%;padding:12px;border-radius:12px;border:1px solid #dfe3ea;font:inherit
+}
+.contact .form-note{color:#6b7280;font-size:14px}
+.company ul{list-style:none;padding:0;margin:0 0 10px;color:#374151}
+.company li{margin:6px 0}
+.small{font-size:14px;color:#6b7280}
+.site-footer{padding:20px 0;border-top:1px solid #eef2f7;background:#fff}
+@media (max-width: 900px){
+  .hero-grid, .contact-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .nav{display:none}
+}
