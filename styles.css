@@ -234,3 +234,21 @@ h2{
   .company ul{ color:#cbd5e1; }
   .site-footer{ background:#11131a; border-top-color:#1f2332; }
 }
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif; /* тот же, что в шапке */
+  font-weight: 700; /* если в шапке жирный */
+  font-size: 2.5rem; /* подберите под дизайн */
+  line-height: 1.2;
+  letter-spacing: 0.5px; /* если в шапке есть */
+  color: #0f172a; /* цвет текста */
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* тоньше, чем заголовок */
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #374151;
+}
