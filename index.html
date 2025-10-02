@@ -1,134 +1,606 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Churchill Power — Energy Storage Systems (BESS)</title>
-  <meta name="description" content="Churchill Power: modular battery energy storage systems (BESS) for commercial & industrial applications across Canada.">
-  <meta property="og:title" content="Churchill Power — Energy Storage Systems (BESS)">
-  <meta property="og:description" content="Modular BESS solutions for commercial & industrial applications.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://churchillpower.ca/">
-  <link rel="icon" href="/assets/favicon.svg">
-  <link rel="preload" href="/styles.css" as="style">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="icon" href="/favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churchill Power - Battery Energy Storage Systems in Ontario</title>
+  <meta name="description" content="Professional BESS installation for homes, farms, and small businesses across Ontario. Peak shaving, backup power, and renewable energy integration.">
+  <style>
+    /* Reset & Variables */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    :root {
+      --dark: #2d3748;
+      --yellow: #ffd93d;
+      --orange: #ff8c42;
+      --red: #e63946;
+      --green: #a7c957;
+      --lime: #d4e157;
+      --gray: #64748b;
+      --light-gray: #f8fafc;
+      --white: #ffffff;
+      --radius: 12px;
+    }
 
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--white);
+    }
 
+    /* Header */
+    header {
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      width: 120px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: var(--orange);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--orange), var(--red));
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 140, 66, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--light-gray);
+      color: var(--dark);
+      border: 2px solid var(--green);
+    }
+
+    .btn-secondary:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+    }
+
+    /* Features */
+    .features {
+      background: linear-gradient(135deg, rgba(255, 217, 61, 0.1), rgba(167, 201, 87, 0.1));
+      padding: 5rem 2rem;
+    }
+
+    .features-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .features-subtitle {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.125rem;
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 4px solid var(--orange);
+    }
+
+    .feature-card:nth-child(2) {
+      border-top-color: var(--yellow);
+    }
+
+    .feature-card:nth-child(3) {
+      border-top-color: var(--green);
+    }
+
+    .feature-card:nth-child(4) {
+      border-top-color: var(--lime);
+    }
+
+    .feature-card:nth-child(5) {
+      border-top-color: var(--red);
+    }
+
+    .feature-card:nth-child(6) {
+      border-top-color: var(--orange);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(255, 140, 66, 0.15);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--yellow), var(--green));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+    }
+
+    .feature-card p {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* Applications */
+    .applications {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .applications h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .applications-subtitle {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1.125rem;
+      margin-bottom: 4rem;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .app-item {
+      text-align: center;
+      padding: 2rem;
+      border-radius: var(--radius);
+      transition: transform 0.3s;
+    }
+
+    .app-item:hover {
+      transform: scale(1.05);
+    }
+
+    .app-item-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .app-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .app-item p {
+      color: var(--gray);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--dark), #1a202c);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow), var(--green));
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #cbd5e0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--light-gray);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--gray);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.5rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1.125rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .logo-svg {
+        width: 100px;
+      }
+
+      nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .features h2,
+      .applications h2,
+      .cta h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <img src="/assets/logo.png" alt="" width="369" height="58" />
-      <span></span>
-    </a>
-
-    <nav class="nav">
-      <a href="#solutions">Solutions</a>
-      <a href="#why-us">Why us</a>
-      <a href="#contact">Contact</a>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#" class="logo">
+        <svg class="logo-svg" viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Logo grid pattern -->
+          <g>
+            <!-- Row 1 -->
+            <rect x="0" y="0" width="15" height="15" fill="#FFD93D" transform="rotate(-15 7.5 7.5)"/>
+            <rect x="20" y="0" width="15" height="15" fill="#FFD93D" transform="rotate(-10 27.5 7.5)"/>
+            <rect x="40" y="0" width="15" height="15" fill="#D4E157" transform="rotate(-5 47.5 7.5)"/>
+            <rect x="60" y="0" width="15" height="15" fill="#A7C957"/>
+            <rect x="80" y="0" width="15" height="15" fill="#A7C957"/>
+            
+            <!-- Row 2 -->
+            <rect x="0" y="20" width="15" height="15" fill="#FFD93D" transform="rotate(-15 7.5 27.5)"/>
+            <rect x="20" y="20" width="15" height="15" fill="#FF8C42" transform="rotate(-10 27.5 27.5)"/>
+            <rect x="40" y="20" width="15" height="15" fill="#FFD93D" transform="rotate(-5 47.5 27.5)"/>
+            <rect x="60" y="20" width="15" height="15" fill="#D4E157"/>
+            <rect x="80" y="20" width="15" height="15" fill="#A7C957"/>
+            
+            <!-- Row 3 -->
+            <rect x="0" y="40" width="15" height="15" fill="#FF8C42" transform="rotate(-15 7.5 47.5)"/>
+            <rect x="20" y="40" width="15" height="15" fill="#FF8C42" transform="rotate(-10 27.5 47.5)"/>
+            <rect x="40" y="40" width="15" height="15" fill="#FFD93D" transform="rotate(-5 47.5 47.5)"/>
+            <rect x="60" y="40" width="15" height="15" fill="#D4E157"/>
+            <rect x="80" y="40" width="15" height="15" fill="#A7C957"/>
+            
+            <!-- Row 4 -->
+            <rect x="0" y="60" width="15" height="15" fill="#E63946" transform="rotate(-15 7.5 67.5)"/>
+            <rect x="20" y="60" width="15" height="15" fill="#FF8C42" transform="rotate(-10 27.5 67.5)"/>
+            <rect x="40" y="60" width="15" height="15" fill="#FF8C42" transform="rotate(-5 47.5 67.5)"/>
+            <rect x="60" y="60" width="15" height="15" fill="#FFD93D"/>
+            <rect x="80" y="60" width="15" height="15" fill="#D4E157"/>
+          </g>
+          
+          <!-- Text -->
+          <text x="110" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#2d3748">CHURCHILL POWER</text>
+          <text x="110" y="68" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Energy Storage Solutions</text>
+        </svg>
+      </a>
+      <ul>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-  </div>
-</header>
+  </header>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Battery Energy Storage for Ontario Homes & Businesses</h1>
+      <p>Modular BESS solutions for peak shaving, backup power, and renewable energy integration. Scalable from 100 kWh to multi-MWh systems.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+        <a href="#solutions" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <svg width="100%" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Battery modules -->
+        <rect x="50" y="150" width="120" height="180" rx="8" fill="#2d3748" opacity="0.9"/>
+        <rect x="190" y="150" width="120" height="180" rx="8" fill="#2d3748" opacity="0.9"/>
+        <rect x="330" y="150" width="120" height="180" rx="8" fill="#2d3748" opacity="0.9"/>
+        
+        <!-- Battery indicators with brand colors -->
+        <rect x="70" y="180" width="80" height="40" rx="4" fill="#A7C957"/>
+        <rect x="210" y="180" width="80" height="40" rx="4" fill="#FFD93D"/>
+        <rect x="350" y="180" width="80" height="40" rx="4" fill="#FF8C42"/>
+        
+        <!-- Battery level indicators -->
+        <rect x="75" y="240" width="70" height="8" rx="4" fill="#A7C957" opacity="0.3"/>
+        <rect x="75" y="240" width="50" height="8" rx="4" fill="#A7C957"/>
+        
+        <rect x="215" y="240" width="70" height="8" rx="4" fill="#FFD93D" opacity="0.3"/>
+        <rect x="215" y="240" width="60" height="8" rx="4" fill="#FFD93D"/>
+        
+        <rect x="355" y="240" width="70" height="8" rx="4" fill="#FF8C42" opacity="0.3"/>
+        <rect x="355" y="240" width="40" height="8" rx="4" fill="#FF8C42"/>
+        
+        <!-- Solar panel -->
+        <rect x="470" y="100" width="100" height="160" rx="6" fill="#334155" opacity="0.9"/>
+        <g stroke="#475569" stroke-width="2">
+          <line x1="480" y1="120" x2="560" y2="120"/>
+          <line x1="480" y1="145" x2="560" y2="145"/>
+          <line x1="480" y1="170" x2="560" y2="170"/>
+          <line x1="480" y1="195" x2="560" y2="195"/>
+          <line x1="480" y1="220" x2="560" y2="220"/>
+          <line x1="480" y1="245" x2="560" y2="245"/>
+          <line x1="505" y1="105" x2="505" y2="255"/>
+          <line x1="535" y1="105" x2="535" y2="255"/>
+        </g>
+        
+        <!-- Inverter -->
+        <rect x="220" y="50" width="80" height="80" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+        <circle cx="260" cy="90" r="18" fill="#A7C957"/>
+        <text x="260" y="97" text-anchor="middle" font-size="14" font-weight="bold" fill="white">ON</text>
+        
+        <!-- Connection lines -->
+        <path d="M 110 150 L 110 100 L 220 100" stroke="#FF8C42" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+        <path d="M 250 150 L 250 130 L 260 130" stroke="#FFD93D" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+        <path d="M 390 150 L 390 100 L 300 100" stroke="#A7C957" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+        <path d="M 470 180 L 380 180 L 380 90 L 300 90" stroke="#D4E157" stroke-width="3" fill="none"/>
+      </svg>
+    </div>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Affordable BESS for Homes and Businesses Across Canada</h1>
-          <p class="lead">Modular BESS for peak shaving, backup power, and renewable integration. Scalable from 100 kWh to multi‑MWh.</p>
-          <div class="cta">
-            <a class="button" href="#contact">Request a call</a>
-            <a class="button ghost" href="#solutions">Explore solutions</a>
-          </div>
-          <ul class="badges">
-            <li>⚡ Grid services</li>
-            <li>🧊 CSA-focused design</li>
-            <li>🧩 Modular & scalable</li>
-          </ul>
+  <!-- Features Section -->
+  <section class="features" id="solutions">
+    <div class="features-container">
+      <h2>Why Choose Churchill Power?</h2>
+      <p class="features-subtitle">Professional BESS solutions tailored for Ontario's unique energy landscape</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Peak Shaving</h3>
+          <p>Reduce demand charges by up to 40% with intelligent battery discharge during peak hours. Optimize your energy costs automatically.</p>
         </div>
-        <div class="hero-art">
-          <img src="/assets/hero-bess.png" alt="Illustration of modular BESS containers">
+        <div class="feature-card">
+          <div class="feature-icon">🔋</div>
+          <h3>Backup Power</h3>
+          <p>Keep operations running during outages. Our systems provide seamless transition to battery power when the grid goes down.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">☀️</div>
+          <h3>Solar Integration</h3>
+          <p>Maximize your solar investment. Store excess energy and use it when you need it most, day or night.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Modular & Scalable</h3>
+          <p>Start small and expand as needed. Our systems scale from 100 kWh for homes to multi-MWh for commercial facilities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3>Full Service</h3>
+          <p>From consultation to installation and maintenance, we handle everything. Licensed electricians and certified installers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>ROI Focused</h3>
+          <p>Clear payback periods and energy savings analysis. We help you understand the financial benefits before you commit.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="solutions" class="section">
-      <div class="container">
-        <h2>Solutions</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Commercial &amp; Industrial BESS</h3>
-            <p>Peak shaving, demand charge reduction, power quality improvement. From 100–1000 kWh single-site systems.</p>
-          </article>
-          <article class="card">
-            <h3>Microgrid &amp; Renewables</h3>
-            <p>PV + Storage integration, diesel offset, islanded operation with smart controls and EMS.</p>
-          </article>
-          <article class="card">
-            <h3>Backup &amp; Resilience</h3>
-            <p>Seamless backup for critical loads with fast transfer and safe LFP chemistry.</p>
-          </article>
-        </div>
+  <!-- Applications Section -->
+  <section class="applications" id="applications">
+    <h2>Perfect For</h2>
+    <p class="applications-subtitle">BESS solutions for diverse Ontario applications</p>
+    <div class="app-grid">
+      <div class="app-item">
+        <div class="app-item-icon">🏡</div>
+        <h3>Residential</h3>
+        <p>Backup power and solar storage for Ontario homes</p>
       </div>
-    </section>
-
-    <section id="why" class="section alt">
-      <div class="container">
-        <h2>Why Churchill Power</h2>
-        <ul class="features">
-          <li><strong>Safety-first:</strong> LFP chemistry, multi-layer BMS, fire detection & suppression readiness.</li>
-          <li><strong>Transparent integration:</strong> Open protocols (Modbus/TCP), SCADA/EMS friendly.</li>
-          <li><strong>Service model:</strong> Local install partners, remote monitoring, and SLAs.</li>
-        </ul>
+      <div class="app-item">
+        <div class="app-item-icon">🌾</div>
+        <h3>Farms</h3>
+        <p>Reliable power for agricultural operations</p>
       </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Tell us about your project. We’ll get back within one business day.</p>
-        <div class="contact-grid">
-          <form class="contact" method="POST" action="https://formspree.io/f/your_form_id">
-            <label>
-              Your name
-              <input type="text" name="name" placeholder="Full name" required>
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@example.com" required>
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows="5" placeholder="Project context, timeline, power/energy needs…" required></textarea>
-            </label>
-            <button class="button" type="submit">Send</button>
-            <p class="form-note">No tracking, no spam. Or email us at <a href="mailto:info@churchillpower.ca">info@churchillpower.ca</a>.</p>
-          </form>
-          <div class="company">
-            <h3>Churchill Power</h3>
-            <ul>
-              <li>Mississauga, ON, Canada</li>
-              <li><a href="mailto:info@churchillpower.ca">info@churchillpower.ca</a></li>
-            </ul>
-            <p class="small">© <span id="year"></span> Churchill Power. All rights reserved.</p>
-          </div>
-        </div>
+      <div class="app-item">
+        <div class="app-item-icon">🏪</div>
+        <h3>Small Business</h3>
+        <p>Reduce operating costs and ensure uptime</p>
       </div>
-    </section>
-  </main>
+      <div class="app-item">
+        <div class="app-item-icon">🏭</div>
+        <h3>Light Industrial</h3>
+        <p>Peak shaving and demand management</p>
+      </div>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p class="small">Built with a simple static stack. Fast, secure, and easy to host anywhere.</p>
+  <!-- CTA Section -->
+  <section class="cta" id="contact">
+    <div class="cta-container">
+      <h2>Ready to Cut Your Energy Costs?</h2>
+      <p>Get a free consultation and custom BESS proposal for your Ontario property</p>
+      <a href="mailto:info@churchillpower.ca" class="btn btn-primary">Contact Us Today</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#solutions">Solutions</a>
+        <a href="#applications">Applications</a>
+        <a href="mailto:info@churchillpower.ca">Contact</a>
+      </div>
+      <p>&copy; 2025 Churchill Power. Energy Storage Solutions for Ontario.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">Licensed electrical contractors serving residential, agricultural, and commercial clients.</p>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
