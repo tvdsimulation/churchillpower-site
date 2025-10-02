@@ -57,13 +57,16 @@ body {
 }
 
 /* УСИЛЕННЫЕ СЕЛЕКТОРЫ для заголовка hero */
+section.hero h1,
+section#hero h1,
 .hero h1,
 .hero-title,
 h1.hero-title,
 .hero .hero-title,
-section.hero h1,
 .hero > div h1,
-.hero h1.hero-title {
+.hero h1.hero-title,
+div.hero-text h1,
+.hero-grid h1 {
   font-family: var(--font-sans) !important;
   font-weight: 700 !important;
   letter-spacing: 0 !important;
@@ -72,6 +75,13 @@ section.hero h1,
   line-height: 1.15 !important;
   color: var(--ink) !important;
   margin: 0 0 1rem 0 !important;
+}
+
+/* Дополнительный специфичный селектор */
+section[class*="hero"] div[class*="hero-text"] h1,
+section[class*="hero"] div[class*="container"] h1 {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
 }
 
 /* УСИЛЕННЫЕ СЕЛЕКТОРЫ для подзаголовка hero */
