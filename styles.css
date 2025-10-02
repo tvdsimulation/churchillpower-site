@@ -1,7 +1,5 @@
-/* ===== Churchill Power — Base Styles ===== */
-
-/* Color tokens */
-:root{
+/* === ROOT VARIABLES === */
+:root {
   --bg:#0b0c10;
   --panel:#11131a;
   --ink:#0f172a;
@@ -14,241 +12,113 @@
   --radius:16px;
   --shadow: 0 10px 30px rgba(0,0,0,.08);
 
-  /* Fonts */
-  /* На Windows будет Bahnschrift; везде — Barlow (если подключён в <head>) */
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  --font-nav: Bahnschrift, "Barlow Semi Condensed", "Barlow", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 
+               "Noto Sans", Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
 
-/* Reset / base */
-*{ box-sizing: border-box; }
-html,body{ margin:0; padding:0; }
-img{ max-width:100%; display:block; }
-a{ color:inherit; }
-
-body{
+/* === GLOBAL RESET === */
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+body {
   font-family: var(--font-sans);
   line-height:1.6;
-  color: var(--ink);
-  background: #fff;
+  color: var(--text);
+  background: var(--paper);
+  font-size: 16px;
 }
 
-/* Layout helpers */
-.container{
+/* === CONTAINER === */
+.container {
   max-width:1100px;
   margin:0 auto;
-  padding:0 20px;
+  padding:0 1rem;
 }
 
-/* ===== Header ===== */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(8px);
-  background: rgba(255,255,255,.7);
-  border-bottom: 1px solid rgba(0,0,0,.06);
+/* === HEADER / NAV === */
+.site-header {
+  background: var(--paper);
+  box-shadow: var(--shadow);
 }
-.site-header .container{
+.site-header .nav a {
+  font-family: var(--font-sans);
+  font-weight:600;
+  font-size:1rem;
+  text-decoration:none;
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+}
+
+/* === HERO SECTION === */
+.hero {
+  padding:4rem 0;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  height:64px;
-  max-width:1080px;
-  padding: 12px 16px;
-}
-
-.brand{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  font-weight:700;
-  text-decoration:none;
-  color:#111827;
-}
-.logo{ height:28px; width:auto; }
-
-/* Навигация — работает и если <nav> без класса .nav */
-.site-header nav a,
-.nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:#334155;
-  font-family: var(--font-nav);
-  font-weight:600;
-  letter-spacing:.02em;
-  text-transform: uppercase; /* под стиль Bahnschrift; можно убрать */
-}
-.site-header nav a:hover,
-.nav a:hover{ color:#0f172a; }
-
-/* ===== Hero ===== */
-.hero{
-  padding:56px 0;
-  background: linear-gradient(180deg,#f9fbff, #fff);
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:32px;
-  align-items:center;
-}
-.hero h1{
-  font-size: clamp(28px, 4vw, 44px);
-  line-height:1.15;
-  margin:0 0 10px;
-}
-.lead{
-  font-size: clamp(16px, 2.2vw, 18px);
-  color:#4b5563;
-  margin:0 0 18px;
-}
-.cta{ display:flex; gap:12px; margin-bottom:12px; }
-
-/* Buttons */
-.button{
-  background:var(--brand);
-  color:#fff;
-  text-decoration:none;
-  border:none;
-  border-radius:12px;
-  padding:12px 18px;
-  font-weight:600;
-  display:inline-block;
-  box-shadow:var(--shadow);
-  cursor:pointer;
-}
-.button.ghost{
-  background:#eaf1ff;
-  color:#1d4ed8;
-}
-
-/* Badges */
-.badges{
-  display:flex;
-  gap:12px;
-  list-style:none;
-  padding:0;
-  margin:10px 0 0;
-  color:#4b5563;
-  font-size:14px;
   flex-wrap:wrap;
 }
 
-.hero-art img{
-  width:100%;
-  height:auto;
-  filter: drop-shadow(var(--shadow));
+/* Заголовок hero */
+.hero h1,
+h1.hero-title,
+.hero .hero-title {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 1rem 0;
 }
 
-/* ===== Sections ===== */
-.section{ padding:56px 0; }
-.section.alt{ background:#fafbff; }
-
-h2{
-  font-size: clamp(22px, 3.2vw, 30px);
-  margin:0 0 18px;
-}
-
-/* Cards */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.card{
-  background:#fff;
-  border:1px solid #eef2f7;
-  border-radius:16px;
-  padding:18px;
-  box-shadow:var(--shadow);
-}
-
-/* Lists / features */
-.features{
-  display:grid;
-  gap:8px;
-  padding-left:20px;
-}
-
-/* ===== Contact / Company ===== */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:24px;
-  align-items:start;
-}
-.contact label{
-  display:block;
-  font-weight:600;
-  margin-bottom:8px;
-}
-.contact input,
-.contact textarea{
-  width:100%;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid #dfe3ea;
-  font:inherit;
-}
-.contact .form-note{
-  color:#6b7280;
-  font-size:14px;
-}
-
-.company ul{
-  list-style:none;
-  padding:0;
-  margin:0 0 10px;
-  color:#374151;
-}
-.company li{ margin:6px 0; }
-.small{ font-size:14px; color:#6b7280; }
-
-/* ===== Footer ===== */
-.site-footer{
-  padding:20px 0;
-  border-top:1px solid #eef2f7;
-  background:#fff;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 900px){
-  .hero-grid,
-  .contact-grid{ grid-template-columns:1fr; }
-  .cards{ grid-template-columns:1fr; }
-  /* Скрываем десктоп-меню на узких экранах (если нет бургера) */
-  .site-header nav,
-  .nav{ display:none; }
-}
-
-/* ===== Optional Dark Mode (авто по системной теме) ===== */
-@media (prefers-color-scheme: dark){
-  body{ background:#0b0c10; color:#e5e7eb; }
-  .site-header{ background: rgba(17,19,26,.7); border-bottom:1px solid rgba(255,255,255,.08); }
-  .brand{ color:#e5e7eb; }
-  .site-header nav a, .nav a{ color:#cbd5e1; }
-  .site-header nav a:hover, .nav a:hover{ color:#fff; }
-  .section.alt{ background:#0f1220; }
-  .card{ background:#11131a; border-color:#1f2332; }
-  .company ul{ color:#cbd5e1; }
-  .site-footer{ background:#11131a; border-top-color:#1f2332; }
-}
-
-.hero-title {
-  font-family: var(--font-sans) !important; /* тот же шрифт, что в шапке */
-  font-weight: 700;      /* жирный заголовок */
-  font-size: 2.8rem;     /* подберите размер под дизайн */
-  line-height: 1.2;
-  color: var(--ink);     /* фирменный цвет текста */
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-family: var(--font-sans) !important; 
-  font-weight: 400;      /* обычный вес */
-  font-size: 1.25rem;    /* поменьше, чем заголовок */
+/* Подзаголовок hero */
+.hero p.hero-subtitle,
+.hero .hero-subtitle {
+  font-family: var(--font-sans) !important;
+  font-weight: 400 !important;
+  font-size: clamp(1.05rem, 1.2vw, 1.25rem);
   line-height: 1.5;
-  color: var(--muted);   /* более мягкий цвет */
-  margin-bottom: 2rem;
+  color: var(--muted);
+  margin: 0 0 2rem 0;
+}
+
+/* === BUTTONS === */
+.btn {
+  display:inline-block;
+  padding:0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration:none;
+  font-weight:600;
+  font-family: var(--font-sans);
+  transition: background .2s ease, color .2s ease;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color:#fff;
+}
+.btn-primary:hover {
+  background: var(--brand-ink);
+}
+
+.btn-secondary {
+  background: var(--soft);
+  color: var(--ink);
+}
+.btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+/* === FEATURES ICONS (под заголовком) === */
+.features {
+  display:flex;
+  gap:2rem;
+  margin-top:1.5rem;
+}
+.features span {
+  font-size:0.9rem;
+  color: var(--muted);
+  display:flex;
+  align-items:center;
+  gap:0.4rem;
 }
