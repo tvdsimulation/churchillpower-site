@@ -236,14 +236,13 @@ h2{
 }
 
 .hero-title {
-  font-family: 'Montserrat', sans-serif; /* тот же, что в шапке */
-  font-weight: 700; /* если в шапке жирный */
-  font-size: 2.5rem; /* подберите под дизайн */
+  font-family: var(--font-sans);
+  font-weight: 700;   /* жирность, можно как в шапке */
+  font-size: 2.5rem;  /* регулируйте размер */
   line-height: 1.2;
-  letter-spacing: 0.5px; /* если в шапке есть */
-  color: #0f172a; /* цвет текста */
-  margin-bottom: 1rem;
+  color: var(--ink);  /* или тот же цвет, что и в шапке */
 }
+
 
 .hero-subtitle {
   font-family: 'Montserrat', sans-serif;
