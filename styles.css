@@ -236,18 +236,19 @@ h2{
 }
 
 .hero-title {
-  font-family: var(--font-sans);
-  font-weight: 700;   /* жирность, можно как в шапке */
-  font-size: 2.5rem;  /* регулируйте размер */
+  font-family: var(--font-sans) !important; /* тот же шрифт, что в шапке */
+  font-weight: 700;      /* жирный заголовок */
+  font-size: 2.8rem;     /* подберите размер под дизайн */
   line-height: 1.2;
-  color: var(--ink);  /* или тот же цвет, что и в шапке */
+  color: var(--ink);     /* фирменный цвет текста */
+  margin-bottom: 1rem;
 }
 
-
 .hero-subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400; /* тоньше, чем заголовок */
-  font-size: 1.25rem;
+  font-family: var(--font-sans) !important; 
+  font-weight: 400;      /* обычный вес */
+  font-size: 1.25rem;    /* поменьше, чем заголовок */
   line-height: 1.5;
-  color: #374151;
+  color: var(--muted);   /* более мягкий цвет */
+  margin-bottom: 2rem;
 }
